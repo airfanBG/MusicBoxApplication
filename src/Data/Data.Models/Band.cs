@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    public class Band
+    public class Band:BaseModel
     {
-        public string Id { get; set; }
+        public Band()
+        {
+            Artists = new List<Artist>();
+            Songs=new List<Song>();
+        }
         [Required]
         [StringLength(50,MinimumLength = 2)]
         public string BandName { get; set; }

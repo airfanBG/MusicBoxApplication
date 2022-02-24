@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    public class Song
+    public class Song:BaseModel
     {
-        public string Id { get; set; }
+        public Song()
+        {
+            ArtistSongs = new List<ArtistSong>();
+        }
         [Required]
         [MaxLength(100)]
         [MinLength(2)]

@@ -7,9 +7,12 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    public class Artist
+    public class Artist:BaseModel
     {
-        public string Id { get; set; }
+        public Artist()
+        {
+            ArtistSongs = new List<ArtistSong>();
+        }
         [Required]
         [StringLength(20,MinimumLength = 2)]
         public string ArtistName { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Models
 {
-    public class ArtistSong
+    public class ArtistSong:BaseModel
     {
         public string ArtistId { get; set; }
         public Artist Artist { get; set; }
