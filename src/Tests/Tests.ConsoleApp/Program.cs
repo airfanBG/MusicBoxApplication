@@ -1,6 +1,7 @@
 ﻿using Data.ApplicationContext;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Services.Services;
 using System;
 using System.Linq;
 
@@ -10,15 +11,17 @@ namespace Tests.ConsoleApp
     {
         static void Main(string[] args)
         {
-           MusicDbContext context=new MusicDbContext();
+            BaseService baseService = new BaseService(new MusicDbContext());
+            var res=baseService.GetAll();
+        //   MusicDbContext context=new MusicDbContext();
 
-            var allPeshoSongs = context.ArtistSongs.Where(x => x.ArtistId == "6bc9b0c0-7cbd-4e90-abcf-16a3a04b6d05").Include(x => x.Song).Include(x => x.Artist).Select(x => new
-            {
-                ArtistName=x.Artist.ArtistName,
-                ArtistSong=x.Song.SongName,
-                ReleaseDate=x.Song.ReleaseDate,
-                Time=x.Song.Seconds
-            }).ToList();
+        //    var allPeshoSongs = context.ArtistSongs.Where(x => x.ArtistId == "6bc9b0c0-7cbd-4e90-abcf-16a3a04b6d05").Include(x => x.Song).Include(x => x.Artist).Select(x => new
+        //    {
+        //        ArtistName=x.Artist.ArtistName,
+        //        ArtistSong=x.Song.SongName,
+        //        ReleaseDate=x.Song.ReleaseDate,
+        //        Time=x.Song.Seconds
+        //    }).ToList();
             //Song song = new Song()
             //{
             //    SongName = "Hello",

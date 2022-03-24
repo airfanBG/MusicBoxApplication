@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Services\Services.csproj" />
     <ProjectReference Include="..\..\Data\Data.ApplicationContext\Data.ApplicationContext.csproj" />
   </ItemGroup>
 
